@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="tr" class="scroll-smooth">
 <head>
@@ -30,10 +29,6 @@
                             black: '#111111',
                             red: '#E30613',
                             gold: '#D4AF37'
-                        },
-                        yozgat: {
-                            green: '#15803d',
-                            yellow: '#eab308'
                         }
                     },
                     animation: {
@@ -76,28 +71,27 @@
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .dark .glass-card {
-            background: rgba(17, 24, 39, 0.75);
+            background: rgba(17, 24, 39, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
         }
         .dark .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.9);
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -124,7 +118,6 @@
             background-size: 24px 24px;
         }
 
-        /* Heart animation */
         @keyframes floatingHeart {
             0% { transform: translateY(0) scale(0.8); opacity: 1; }
             100% { transform: translateY(-100px) scale(1.4); opacity: 0; }
@@ -133,6 +126,16 @@
             position: absolute;
             pointer-events: none;
             animation: floatingHeart 1.2s ease-out forwards;
+            z-index: 100;
+        }
+
+        #candyCanvas {
+            background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 1.5rem;
+            touch-action: none;
+        }
+        .dark #candyCanvas {
+            background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
         }
     </style>
 </head>
@@ -153,8 +156,8 @@
                 <a href="#about" class="px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:shadow-sm transition">Kimdir?</a>
                 <a href="#family" class="px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:shadow-sm transition">Ailesi</a>
                 <a href="#superpowers" class="px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:shadow-sm transition">Süper Güçler</a>
-                <a href="#games" class="px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:shadow-sm transition">Mini Oyunlar 🎮</a>
-                <a href="#bjk" class="px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 hover:shadow-sm transition">Beşiktaş 🦅</a>
+                <a href="#games" class="px-4 py-2 rounded-xl text-amber-600 dark:text-amber-400 font-bold bg-amber-100/50 dark:bg-amber-950/40 hover:bg-amber-100 transition">Mini Oyunlar 🎮</a>
+                <a href="#bjk" class="px-3 py-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 hover:shadow-sm transition">Beşiktaş 🦅</a>
             </div>
 
             <!-- Controls (Sound & Theme) -->
@@ -171,19 +174,16 @@
 
     <!-- Hero Banner Section -->
     <header class="relative pt-12 pb-20 overflow-hidden hero-pattern">
-        <!-- Decorative Floating Bubbles -->
         <div class="absolute top-10 left-10 w-24 h-24 bg-amber-400/20 dark:bg-amber-400/10 rounded-full blur-2xl animate-float"></div>
         <div class="absolute bottom-10 right-10 w-32 h-32 bg-rose-500/20 dark:bg-rose-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 1.5s;"></div>
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto">
                 
-                <!-- BJK Eagle Tag -->
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-xs font-bold uppercase tracking-wider mb-6 shadow-xl animate-bounce-soft">
-                    <span>🦅</span> Kara Kartal'ın En Tatlı Üyesi
+                    <span>👑</span> Dünyanın En Tatlı Çocuk Biyografisi
                 </div>
 
-                <!-- Avatar & Mascot Frame -->
                 <div class="relative w-36 h-36 mx-auto mb-6">
                     <div class="absolute inset-0 bg-gradient-to-tr from-amber-400 via-rose-500 to-indigo-600 rounded-3xl rotate-6 animate-pulse-glow blur-sm"></div>
                     <div class="relative w-full h-full bg-white dark:bg-slate-900 rounded-3xl flex items-center justify-center text-6xl shadow-2xl border-2 border-white/50 dark:border-slate-800 overflow-hidden group cursor-pointer" onclick="triggerConfetti(); playAudioEffect('cheer');">
@@ -194,17 +194,16 @@
                     </div>
                 </div>
 
-                <!-- Main Title -->
                 <h1 class="text-4xl sm:text-6xl font-playful font-extrabold text-slate-900 dark:text-white tracking-wide leading-tight mb-3">
                     Yusuf Asaf Gökçe <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-rose-500 to-indigo-600">Kimdir?</span>
                 </h1>
                 
                 <p class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-                    Ankara doğumlu, Yozgat asaletli, Beşiktaş sevdalısı, akıl küpü ve enerjisi hiç bitmeyen süper bir küçük adam!
+                    Ankara doğumlu, Yozgat asaletli, akıl küpü, güçlü ve enerjisi hiç bitmeyen süper bir küçük adam!
                 </p>
 
-                <!-- Interactive Famous Quote Button / Widget -->
+                <!-- Interactive Famous Quote Widget -->
                 <div class="relative inline-block group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
                     <div class="relative bg-white dark:bg-slate-900 px-8 py-6 rounded-3xl shadow-xl border border-amber-200 dark:border-amber-900/50 text-center">
@@ -215,7 +214,7 @@
                         
                         <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
                             <button onclick="speakCatchphrase()" class="px-5 py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm shadow-md transition active:scale-95 flex items-center gap-2">
-                                <i class="fa-solid fa-volume-high"></i> Sloganı Seslendir!
+                                <i class="fa-solid fa-volume-high"></i> Sloganı Seslendir! 🔊
                             </button>
                             <button onclick="triggerConfetti(); playAudioEffect('tada');" class="px-5 py-2.5 rounded-2xl bg-rose-500 hover:bg-rose-600 text-white font-bold text-sm shadow-md transition active:scale-95 flex items-center gap-2">
                                 <i class="fa-solid fa-wand-magic-sparkles"></i> Kutla & Konfeti Patlat! 🎉
@@ -237,22 +236,18 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- Days Count -->
                 <div class="glass-card p-5 rounded-3xl text-center border shadow-sm">
                     <div class="text-3xl sm:text-4xl font-playful font-extrabold text-amber-500" id="counterDays">0</div>
                     <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mt-1">Günlük Sevimlilik</div>
                 </div>
-                <!-- Hours Count -->
                 <div class="glass-card p-5 rounded-3xl text-center border shadow-sm">
                     <div class="text-3xl sm:text-4xl font-playful font-extrabold text-rose-500" id="counterHours">0</div>
                     <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mt-1">Saatlik Enerji</div>
                 </div>
-                <!-- Happiness Generated -->
                 <div class="glass-card p-5 rounded-3xl text-center border shadow-sm">
                     <div class="text-3xl sm:text-4xl font-playful font-extrabold text-indigo-500">%1000</div>
                     <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mt-1">Sürekli Mutluluk</div>
                 </div>
-                <!-- Birth Place -->
                 <div class="glass-card p-5 rounded-3xl text-center border shadow-sm flex flex-col justify-center items-center">
                     <div class="text-2xl font-playful font-bold text-slate-800 dark:text-white">Ankara <span class="text-xs font-normal text-amber-500">→ Yozgat</span></div>
                     <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mt-1">Doğum Yeri & Kökler</div>
@@ -271,12 +266,9 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                
                 <!-- Father Card -->
                 <div onclick="addLoveHeart(event, 'celal')" class="glass-card relative overflow-hidden p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl cursor-pointer hover:scale-[1.02] transition-transform group">
-                    <div class="absolute -right-6 -bottom-6 text-slate-100 dark:text-slate-800 text-9xl font-black select-none pointer-events-none opacity-40">
-                        👨
-                    </div>
+                    <div class="absolute -right-6 -bottom-6 text-slate-100 dark:text-slate-800 text-9xl font-black select-none pointer-events-none opacity-40">👨</div>
                     <div class="flex items-center gap-5 relative z-10">
                         <div class="w-20 h-20 rounded-2xl bg-slate-900 text-amber-400 flex items-center justify-center text-3xl font-bold shadow-xl shrink-0 group-hover:rotate-6 transition-transform">
                             <i class="fa-solid fa-crown"></i>
@@ -297,9 +289,7 @@
 
                 <!-- Mother Card -->
                 <div onclick="addLoveHeart(event, 'betul')" class="glass-card relative overflow-hidden p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl cursor-pointer hover:scale-[1.02] transition-transform group">
-                    <div class="absolute -right-6 -bottom-6 text-slate-100 dark:text-slate-800 text-9xl font-black select-none pointer-events-none opacity-40">
-                        👩
-                    </div>
+                    <div class="absolute -right-6 -bottom-6 text-slate-100 dark:text-slate-800 text-9xl font-black select-none pointer-events-none opacity-40">👩</div>
                     <div class="flex items-center gap-5 relative z-10">
                         <div class="w-20 h-20 rounded-2xl bg-rose-500 text-white flex items-center justify-center text-3xl font-bold shadow-xl shrink-0 group-hover:-rotate-6 transition-transform">
                             <i class="fa-solid fa-heart"></i>
@@ -317,12 +307,11 @@
                         <span id="betulHearts" class="font-bold text-rose-500">0 Kalp</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Superpowers & Personality Section -->
+    <!-- Superpowers Section -->
     <section id="superpowers" class="py-16 bg-slate-100/70 dark:bg-slate-900/80">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -331,7 +320,6 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Zeki & Oyuncu -->
                 <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md">
                     <div class="w-12 h-12 rounded-2xl bg-indigo-500 text-white flex items-center justify-center text-xl mb-4 shadow-lg shadow-indigo-500/30">
                         <i class="fa-solid fa-brain"></i>
@@ -342,7 +330,6 @@
                     </p>
                 </div>
 
-                <!-- Yakışıklı & Tatlı -->
                 <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md">
                     <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl mb-4 shadow-lg shadow-amber-500/30">
                         <i class="fa-solid fa-face-smile-beam"></i>
@@ -353,7 +340,6 @@
                     </p>
                 </div>
 
-                <!-- Çok Güçlü -->
                 <div class="glass-card p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md">
                     <div class="w-12 h-12 rounded-2xl bg-rose-500 text-white flex items-center justify-center text-xl mb-4 shadow-lg shadow-rose-500/30">
                         <i class="fa-solid fa-bolt"></i>
@@ -367,19 +353,22 @@
         </div>
     </section>
 
-    <!-- Mini Games & Interactive Widgets Section -->
-    <section id="games" class="py-16 relative overflow-hidden">
+    <!-- MINI GAMES SECTION (Geliştirilmiş Oyunlar) -->
+    <section id="games" class="py-16 relative overflow-hidden bg-amber-50/50 dark:bg-slate-950">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-xs font-extrabold text-emerald-500 uppercase tracking-widest">Eğlence Zamanı</span>
-                <h2 class="text-3xl sm:text-4xl font-playful font-bold text-slate-900 dark:text-white mt-1">İnteraktif Yusuf Asaf Oyunları 🎮</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Aşağıdaki oyunları oynayarak Yusuf Asaf'ın yeteneklerini test edin!</p>
+                <span class="text-xs font-extrabold text-amber-500 uppercase tracking-widest">Aksiyon & Oyun Alanı</span>
+                <h2 class="text-3xl sm:text-5xl font-playful font-extrabold text-slate-900 dark:text-white mt-1">İnteraktif Yusuf Asaf Oyunları 🎮</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 max-w-xl mx-auto">
+                    Aşağıdaki eğlenceli oyunları oynayarak Yusuf Asaf'ın yeteneklerini test edin ve eğlenceli vakit geçirin!
+                </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8">
+            <!-- GRID OF GAMES -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
                 
-                <!-- GAME 1: Telefonu Geri Alma Simülatörü -->
-                <div class="glass-card p-8 rounded-3xl border border-rose-200 dark:border-rose-900/50 shadow-xl relative flex flex-col justify-between">
+                <!-- OYUN 1: Kaçan Telefonu Yakala -->
+                <div class="glass-card p-8 rounded-3xl border border-rose-200 dark:border-rose-900/50 shadow-xl relative flex flex-col justify-between overflow-hidden">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-rose-100 text-rose-600 dark:bg-rose-950 dark:text-rose-300">
@@ -387,123 +376,124 @@
                             </span>
                             <span class="text-xs text-slate-400 font-bold">Oyun #1</span>
                         </div>
-                        <h3 class="text-2xl font-playful font-bold text-slate-900 dark:text-white">Telefonu Geri Alabilir misin?</h3>
+                        <h3 class="text-2xl font-playful font-bold text-slate-900 dark:text-white">Telefon Bıraktırma Oyunu</h3>
                         <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-                            Yusuf Asaf telefona sarıldı mı <strong class="text-rose-500">asla bırakmaz!</strong> Aşağıdaki butona basarak telefonu geri istemeyi deneyin.
+                            Yusuf Asaf telefona sarıldı mı <strong class="text-rose-500">asla bırakmaz!</strong> Ekranda kaçan telefonu yakalamayı deneyin.
                         </p>
                     </div>
 
-                    <!-- Interactive Phone Screen Widget -->
-                    <div class="my-6 p-6 rounded-2xl bg-slate-900 text-white text-center relative overflow-hidden border-4 border-slate-800 shadow-inner">
-                        <div id="phoneDisplay" class="text-4xl mb-2 animate-bounce">📱👶</div>
-                        <p id="phoneDialog" class="font-playful text-lg text-amber-300 font-bold">
+                    <!-- kaçan telefon oyun alanı -->
+                    <div id="phoneArea" class="my-6 h-48 rounded-2xl bg-slate-900 text-white text-center relative overflow-hidden border-4 border-slate-800 shadow-inner flex flex-col items-center justify-center p-4">
+                        <div id="runnyPhone" onclick="catchPhone()" onmouseenter="dodgePhone()" class="absolute cursor-pointer text-4xl transition-all duration-200 select-none p-2 hover:scale-125" style="top: 35%; left: 40%;">
+                            📱
+                        </div>
+                        <p id="phoneDialog" class="font-playful text-sm sm:text-base text-amber-300 font-bold z-10 pointer-events-none mt-auto">
                             "Sadece 5 dakika daha video izleyeceğim!"
                         </p>
-                        <p id="phoneSubtext" class="text-xs text-slate-400 mt-1">Yusuf Asaf telefonu sıkıca tutuyor.</p>
                     </div>
 
-                    <button onclick="tryTakePhone()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-playful font-bold text-lg shadow-lg hover:shadow-rose-500/25 active:scale-98 transition transform">
-                        Telefonu İste! 🖐️
+                    <button onclick="catchPhone()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-playful font-bold text-base shadow-lg hover:shadow-rose-500/25 active:scale-98 transition transform">
+                        Telefonu Yakalamaya Çalış! 🖐️
                     </button>
                 </div>
 
-                <!-- GAME 2: Güç Ölçer & Bilek Güreşi -->
+                <!-- OYUN 2: Güç Ölçer Örs Arcade -->
                 <div class="glass-card p-8 rounded-3xl border border-amber-200 dark:border-amber-900/50 shadow-xl relative flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300">
-                                💪 Süper Güç Testi
+                                💪 Arcade Çekiç Gücü
                             </span>
                             <span class="text-xs text-slate-400 font-bold">Oyun #2</span>
                         </div>
-                        <h3 class="text-2xl font-playful font-bold text-slate-900 dark:text-white">Süper Güç Metresi</h3>
+                        <h3 class="text-2xl font-playful font-bold text-slate-900 dark:text-white">Süper Güç Testi</h3>
                         <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-                            Hızlıca tıklayarak Yusuf Asaf'ın kas gücünü doldurun ve enerjisini tavan yaptırın!
+                            Hızlıca tıklayarak Yusuf Asaf'ın kas gücünü rekor seviyeye ulaştırın!
                         </p>
                     </div>
 
-                    <!-- Power Meter Progress Bar -->
                     <div class="my-6">
                         <div class="flex justify-between items-center mb-2">
                             <span class="text-xs font-extrabold text-slate-600 dark:text-slate-300 uppercase">Güç Seviyesi</span>
                             <span id="powerLevelText" class="text-lg font-playful font-extrabold text-amber-500">%0</span>
                         </div>
-                        <div class="w-full h-6 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden p-1 border border-slate-300 dark:border-slate-700">
-                            <div id="powerBar" class="h-full bg-gradient-to-r from-amber-400 via-rose-500 to-indigo-600 rounded-full w-0 transition-all duration-200"></div>
+                        <div class="w-full h-7 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden p-1 border border-slate-300 dark:border-slate-700">
+                            <div id="powerBar" class="h-full bg-gradient-to-r from-amber-400 via-rose-500 to-indigo-600 rounded-full w-0 transition-all duration-150"></div>
                         </div>
-                        <p id="powerStatus" class="text-xs text-center text-slate-500 dark:text-slate-400 mt-2">Tıklamaya başla!</p>
+                        <p id="powerStatus" class="text-xs text-center text-slate-500 dark:text-slate-400 mt-2 font-semibold">Tıklamaya başla ve rekor kır!</p>
                     </div>
 
-                    <button onclick="boostPower()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-indigo-600 text-white font-playful font-bold text-lg shadow-lg hover:shadow-indigo-500/25 active:scale-95 transition transform">
-                        Tıkla & Güç Yükle! ⚡
+                    <button onclick="boostPower()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-indigo-600 text-white font-playful font-bold text-base shadow-lg hover:shadow-indigo-500/25 active:scale-95 transition transform">
+                        Hızlıca Tıkla & Güç Yükle! ⚡
                     </button>
                 </div>
 
             </div>
+
+            <!-- OYUN 3: FULL CANVAS "PEK TATLI" ŞEKER YAKALAMA OYUNU -->
+            <div class="glass-card p-6 sm:p-8 rounded-3xl border border-indigo-200 dark:border-indigo-900/50 shadow-2xl relative">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+                            🍬 İnteraktif Canvas Oyunu
+                        </span>
+                        <h3 class="text-2xl sm:text-3xl font-playful font-bold text-slate-900 dark:text-white mt-1">"Pek Tatlı" Şeker Yakalama Oyunu</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                            Yukarıdan düşen şekerleri sepetle yakala! Yusuf Asaf'ın tatlılığını arttır!
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-center">
+                            <div class="text-xs text-slate-400 uppercase font-bold">Skor</div>
+                            <div id="candyScore" class="text-2xl font-playful font-extrabold text-amber-500">0</div>
+                        </div>
+                        <button id="startCandyBtn" onclick="startCandyGame()" class="px-6 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-playful font-bold text-sm shadow-md transition active:scale-95">
+                            Oyunu Başlat 🚀
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative w-full flex justify-center">
+                    <canvas id="candyCanvas" width="700" height="320" class="w-full max-w-2xl border-2 border-indigo-200 dark:border-indigo-800/50 shadow-inner"></canvas>
+                </div>
+                <p class="text-center text-xs text-slate-400 mt-3">Fareyle veya parmağınızı ekranda kaydırarak sepeti hareket ettirin.</p>
+            </div>
+
         </div>
     </section>
 
-    <!-- Beşiktaş (BJK) Fan Corner Section -->
-    <section id="bjk" class="py-16 bg-slate-950 text-white relative overflow-hidden">
-        <!-- Background Eagle Watermark -->
-        <div class="absolute -right-20 -bottom-20 opacity-10 text-[20rem] pointer-events-none select-none">
-            🦅
-        </div>
-
+    <!-- Beşiktaş (BJK) Köşesi (Arka Planda Sade) -->
+    <section id="bjk" class="py-12 bg-slate-950 text-white relative overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-gradient-to-r from-slate-900 via-black to-slate-900 p-8 sm:p-12 rounded-3xl border border-slate-800 shadow-2xl">
-                
-                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                    
-                    <div class="space-y-4 text-center md:text-left">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-amber-400 text-xs font-bold uppercase tracking-widest border border-white/10">
-                            <span>⚽</span> Şampiyon Kartal
-                        </div>
-                        
-                        <h2 class="text-3xl sm:text-5xl font-playful font-extrabold tracking-wide">
-                            Gönül Verdiği Takım: <br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">BEŞİKTAŞ!</span>
-                        </h2>
-
-                        <p class="text-slate-400 text-sm max-w-md">
-                            Siyah ve beyazın tutkusuyla büyüyen küçük minik kartal Yusuf Asaf, her maçı büyük bir heyecanla takip eder!
-                        </p>
-
-                        <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
-                            <button onclick="playBJKCheer()" class="px-6 py-3 rounded-2xl bg-white text-slate-900 hover:bg-slate-200 font-playful font-bold text-sm shadow-xl active:scale-95 transition flex items-center gap-2">
-                                <i class="fa-solid fa-bullhorn text-rose-600"></i> Tezahürat Yap! 🦅
-                            </button>
-                        </div>
+            <div class="bg-slate-900/90 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-2xl bg-black border border-white/20 flex items-center justify-center text-3xl font-bold shrink-0">
+                        🦅
                     </div>
-
-                    <!-- Animated Eagle Jersey Badge -->
-                    <div class="relative group cursor-pointer" onclick="playBJKCheer()">
-                        <div class="w-44 h-44 rounded-3xl bg-gradient-to-tr from-black via-slate-800 to-white/20 p-1 shadow-2xl group-hover:scale-105 transition duration-300">
-                            <div class="w-full h-full bg-black rounded-[22px] flex flex-col items-center justify-center p-4 text-center border border-white/20">
-                                <span class="text-6xl mb-2 group-hover:animate-bounce">🦅</span>
-                                <span class="font-playful font-bold text-white text-lg tracking-widest">BJK 1903</span>
-                                <span class="text-[10px] text-amber-400 font-extrabold uppercase">Siyah - Beyaz</span>
-                            </div>
-                        </div>
+                    <div>
+                        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Sembolik Detay</span>
+                        <h3 class="text-xl sm:text-2xl font-playful font-bold">Beşiktaşlı Küçük Kartal</h3>
+                        <p class="text-xs text-slate-400">Siyah-Beyaz renklere gönül vermiş neşeli bir taraftar.</p>
                     </div>
-
                 </div>
-
+                <button onclick="playBJKCheer()" class="px-5 py-2.5 rounded-2xl bg-white text-slate-900 hover:bg-slate-200 font-playful font-bold text-xs shadow-md transition active:scale-95 whitespace-nowrap">
+                    Tezahürat Yap 🦅
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
-        <div class="max-w-5xl mx-auto px-4 text-center space-y-4">
-            <div class="font-playful font-bold text-2xl text-white">
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-3">
+            <div class="font-playful font-bold text-xl text-white">
                 Yusuf Asaf Gökçe
             </div>
             <p class="text-xs text-slate-400 max-w-md mx-auto">
-                Ankara Doğumlu • Yozgatlı • Beşiktaş Sevdalısı • Dünyalar Tatlısı
+                Ankara Doğumlu • Yozgatlı • Sevimli & Oyuncu • Dünyalar Tatlısı
             </p>
-            <div class="text-xs text-slate-500 pt-4 border-t border-slate-800/80">
-                © 2022 - 2026 Tanıtım Sitesi. Yusuf Asaf İçin Özel Sevgiyle Tasarlandı.
+            <div class="text-xs text-slate-500 pt-3 border-t border-slate-800/80">
+                © 2022 - 2026 Tanıtım Sitesi. Yusuf Asaf İçin Özel Olarak Tasarlandı.
             </div>
         </div>
     </footer>
@@ -522,12 +512,12 @@
 
     <!-- Application Logic Script -->
     <script>
-        /* State Variables */
+        /* Global State Variables */
         let soundEnabled = true;
         let powerScore = 0;
         let heartCounts = { celal: 0, betul: 0 };
 
-        /* Web Audio API Synthesizer for Fun Sound Effects */
+        /* Web Audio API Synthesizer (Harici Ses Dosyasına İhtiyaç Duymaz!) */
         function playAudioEffect(type) {
             if (!soundEnabled) return;
 
@@ -563,7 +553,7 @@
                     osc.stop(ctx.currentTime + 0.12);
                 } 
                 else if (type === 'tada' || type === 'cheer') {
-                    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                    const notes = [523.25, 659.25, 783.99, 1046.50];
                     notes.forEach((freq, idx) => {
                         const osc = ctx.createOscillator();
                         const gain = ctx.createGain();
@@ -581,7 +571,7 @@
             }
         }
 
-        /* Sound Toggle Master */
+        /* Sound Master Toggle */
         function toggleSoundMaster() {
             soundEnabled = !soundEnabled;
             const icon = document.getElementById('soundIcon');
@@ -624,13 +614,13 @@
                 window.speechSynthesis.cancel();
                 const utterance = new SpeechSynthesisUtterance("Yozgatlıyım pek tatlıyım!");
                 utterance.lang = 'tr-TR';
-                utterance.pitch = 1.4; // High pitch for cute effect
+                utterance.pitch = 1.4;
                 utterance.rate = 0.9;
                 window.speechSynthesis.speak(utterance);
             }
         }
 
-        /* Dynamic Days Counter since 2022 Birth */
+        /* Days Counter Since 2022 Birth */
         function calculateDays() {
             const birthDate = new Date('2022-01-01');
             const now = new Date();
@@ -642,7 +632,7 @@
             document.getElementById('counterHours').innerText = diffHours.toLocaleString('tr-TR');
         }
 
-        /* Interactive Hearts on Parents Cards */
+        /* Interactive Hearts */
         function addLoveHeart(event, parentKey) {
             playAudioEffect('pop');
             heartCounts[parentKey]++;
@@ -652,7 +642,6 @@
                 badge.innerText = `${heartCounts[parentKey]} Kalp ❤️`;
             }
 
-            // Create floating heart element at click coordinates
             const heart = document.createElement('div');
             heart.className = 'floating-heart text-2xl';
             heart.innerText = '❤️';
@@ -663,37 +652,42 @@
             setTimeout(() => heart.remove(), 1200);
         }
 
-        /* GAME 1: Phone Taking Simulator */
+        /* OYUN 1: Kaçan Telefon Mantığı */
         const phoneQuotes = [
-            { quote: '"Sadece 5 dakika daha video izleyeceğim!"', emoji: '📱👶' },
-            { quote: '"Asla bırakmam! Çizgi film daha bitmedi!"', emoji: '🖐️😠' },
-            { quote: '"Kendi telefonunu oyna, bu benim!"', emoji: '📱💥' },
-            { quote: '"Bakın arkada ne var! (Kandırıp kaçtı)"', emoji: '🏃‍♂️💨' }
+            '"Sadece 5 dakika daha video izleyeceğim!"',
+            '"Asla bırakmam! Çizgi film daha bitmedi!"',
+            '"Kendi telefonunla oyna, bu benim!"',
+            '"Aaa bak orada ne var! (Kandırıp kaçtı)"'
         ];
-        let phoneQuoteIdx = 0;
+        let phoneDodges = 0;
 
-        function tryTakePhone() {
-            playAudioEffect('click');
-            phoneQuoteIdx = (phoneQuoteIdx + 1) % phoneQuotes.length;
-            
-            const display = document.getElementById('phoneDisplay');
+        function dodgePhone() {
+            playAudioEffect('pop');
+            const phone = document.getElementById('runnyPhone');
             const dialog = document.getElementById('phoneDialog');
             
-            display.innerText = phoneQuotes[phoneQuoteIdx].emoji;
-            dialog.innerText = phoneQuotes[phoneQuoteIdx].quote;
+            const topPos = Math.floor(Math.random() * 65) + 10;
+            const leftPos = Math.floor(Math.random() * 75) + 10;
+            
+            phone.style.top = `${topPos}%`;
+            phone.style.left = `${leftPos}%`;
 
-            if (phoneQuoteIdx === 3) {
-                openGameModal('📱 Sonuç: Başarısız!', 'Yusuf Asaf telefona öyle bir sarıldı ki almak imkansız! İkna etmek için dondurma veya park teklif etmeyi deneyin! 🍦');
-            }
+            phoneDodges++;
+            dialog.innerText = phoneQuotes[phoneDodges % phoneQuotes.length];
         }
 
-        /* GAME 2: Power Meter Boost */
+        function catchPhone() {
+            playAudioEffect('click');
+            openGameModal('📱 Sonuç: İmkansız!', 'Yusuf Asaf telefona öyle bir sarıldı ki almak imkansız! İkna etmek için park veya dondurma teklif edin! 🍦');
+        }
+
+        /* OYUN 2: Güç Ölçer Boost Mantığı */
         function boostPower() {
             playAudioEffect('pop');
             if (powerScore < 100) {
                 powerScore += 10;
             } else {
-                powerScore = 999;
+                powerScore += 50;
             }
 
             const bar = document.getElementById('powerBar');
@@ -706,18 +700,114 @@
                 status.innerText = 'Güç yükleniyor! Tıklamaya devam et!';
             } else {
                 bar.style.width = `100%`;
-                text.innerText = `%9999 SÜPER GÜÇ!`;
+                text.innerText = `%${powerScore} REKOR GÜÇ!`;
                 status.innerText = '💥 SÜPER GÜÇ SEVİYESİ AŞILDI! YUSUF ASAF YENİLMEZ!';
                 triggerConfetti();
                 playAudioEffect('tada');
             }
         }
 
+        /* OYUN 3: CANVAS "PEK TATLI" ŞEKER YAKALAMA OYUNU */
+        let canvas, ctx;
+        let candyGameRunning = false;
+        let candyScore = 0;
+        let basket = { x: 300, y: 270, width: 80, height: 35 };
+        let candies = [];
+        const candyEmojis = ['🍬', '🍭', '🍩', '🍫', '🍦'];
+
+        function initCandyCanvas() {
+            canvas = document.getElementById('candyCanvas');
+            if (!canvas) return;
+            ctx = canvas.getContext('2d');
+
+            // Mouse & Touch Controls
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                basket.x = e.clientX - rect.left - basket.width / 2;
+            });
+
+            canvas.addEventListener('touchmove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                if (e.touches[0]) {
+                    basket.x = e.touches[0].clientX - rect.left - basket.width / 2;
+                }
+            });
+        }
+
+        function startCandyGame() {
+            playAudioEffect('click');
+            candyGameRunning = true;
+            candyScore = 0;
+            candies = [];
+            document.getElementById('candyScore').innerText = '0';
+            document.getElementById('startCandyBtn').innerText = 'Yeniden Başlat 🔄';
+            
+            spawnCandy();
+            requestAnimationFrame(candyGameLoop);
+        }
+
+        function spawnCandy() {
+            if (!candyGameRunning) return;
+            candies.push({
+                x: Math.random() * (canvas.width - 40) + 20,
+                y: -20,
+                speed: Math.random() * 2 + 2,
+                emoji: candyEmojis[Math.floor(Math.random() * candyEmojis.length)]
+            });
+            if (candyGameRunning) {
+                setTimeout(spawnCandy, 800);
+            }
+        }
+
+        function candyGameLoop() {
+            if (!candyGameRunning) return;
+
+            // Clear
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Basket
+            ctx.fillStyle = '#6366f1';
+            ctx.beginPath();
+            ctx.roundRect(basket.x, basket.y, basket.width, basket.height, 12);
+            ctx.fill();
+            ctx.font = '20px sans-serif';
+            ctx.fillText('🧺', basket.x + 28, basket.y + 24);
+
+            // Update & Draw Candies
+            for (let i = candies.length - 1; i >= 0; i--) {
+                let c = candies[i];
+                c.y += c.speed;
+
+                ctx.font = '28px sans-serif';
+                ctx.fillText(c.emoji, c.x, c.y);
+
+                // Collision Detection with Basket
+                if (c.y >= basket.y - 10 && c.y <= basket.y + basket.height &&
+                    c.x >= basket.x - 10 && c.x <= basket.x + basket.width + 10) {
+                    
+                    playAudioEffect('pop');
+                    candyScore += 10;
+                    document.getElementById('candyScore').innerText = candyScore;
+                    candies.splice(i, 1);
+
+                    if (candyScore === 100) {
+                        triggerConfetti();
+                        playAudioEffect('tada');
+                    }
+                } 
+                else if (c.y > canvas.height + 20) {
+                    candies.splice(i, 1);
+                }
+            }
+
+            requestAnimationFrame(candyGameLoop);
+        }
+
         /* Beşiktaş Cheer Effect */
         function playBJKCheer() {
             playAudioEffect('tada');
             triggerConfetti();
-            openGameModal('🦅 Siyah - Beyaz Şampiyon!', 'Yusuf Asaf coşkuyla bağırıyor: "En Büyük Beşiktaş! Ooo Şampiyon Beşiktaş!" ⚽🖤🤍');
+            openGameModal('🦅 Siyah - Beyaz Şampiyon!', 'Yusuf Asaf coşkuyla bağırıyor: "En Büyük Beşiktaş!" ⚽🖤🤍');
         }
 
         /* Modal Dialog Controller */
@@ -747,11 +837,11 @@
             }, 150);
         }
 
-        /* Initial Setup */
+        /* Page Init */
         window.onload = function() {
             calculateDays();
+            initCandyCanvas();
         };
     </script>
 </body>
 </html>
-```
